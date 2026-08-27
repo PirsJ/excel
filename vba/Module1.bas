@@ -763,14 +763,16 @@ Sub PreparerFeuilleSO_Dual(ws As Worksheet, chosenDate As String, showNames As B
     End With
     ws.Rows("8:120").RowHeight = 18
      
-    With ws.PageSetup
+    On Error Resume Next  ' Le format A3 dépend du pilote d'imprimante installé ;
+    With ws.PageSetup      ' on ignore l'erreur si aucune imprimante compatible n'est disponible.
         .PaperSize = xlPaperA3
         .Orientation = xlLandscape
         .Zoom = False
         .FitToPagesWide = 1
         .FitToPagesTall = 1
     End With
-     
+    On Error GoTo 0
+
     ws.Cells(5, 1).Value = chosenDate
     ws.Cells(5, 7).Value = chosenDate
      
@@ -786,14 +788,16 @@ Sub PreparerFeuilleLO_Dual(ws As Worksheet, chosenDate As String, showNames As B
     ws.Range("A7:Z120").ClearContents
     ws.Range("A8:Z120").Interior.ColorIndex = xlNone
      
-    With ws.PageSetup
+    On Error Resume Next  ' Le format A3 dépend du pilote d'imprimante installé ;
+    With ws.PageSetup      ' on ignore l'erreur si aucune imprimante compatible n'est disponible.
         .PaperSize = xlPaperA3
         .Orientation = xlLandscape
         .Zoom = False
         .FitToPagesWide = 1
         .FitToPagesTall = 1
     End With
-     
+    On Error GoTo 0
+
     ws.Cells(5, 1).Value = chosenDate
     ws.Cells(5, 6).Value = chosenDate
      
