@@ -1,4 +1,4 @@
-Option Explicit
+﻿Option Explicit
 
 Sub Clean()
     Dim reponse As VbMsgBoxResult

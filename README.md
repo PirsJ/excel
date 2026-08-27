@@ -29,6 +29,8 @@ Le code VBA compilé (`vbaProject.bin`) est un format binaire propriétaire (OLE
 3. Idem pour `Module2` avec `vba/Module2.bas`.
 4. `Ctrl+S` (garder le format `.xlsm`).
 
+**Attention à l'encodage en ouvrant les `.bas`** : ce sont des fichiers UTF-8 (avec BOM). Le Bloc-notes Windows moderne (Windows 10/11) et VS Code les détectent correctement — les accents (`é`, `à`, `ç`) s'affichent bien. Si un accent s'affiche comme `Ã©` ou `Ã ` à l'ouverture, l'éditeur a mal détecté l'encodage : ne copiez pas ce texte tel quel (vous copieriez la corruption dans le code VBA), rouvrez plutôt le fichier en forçant l'encodage UTF-8 (dans Notepad : Fichier > Ouvrir > choisir "UTF-8" dans le menu déroulant d'encodage en bas de la boîte de dialogue).
+
 ## Non traité (nécessite un choix métier, pas juste un bug)
 
 - Le rôle « LIFTTRUCK DRIVER » (3 personnes dans l'onglet Import) ne suit aucune règle dédiée et passe par le chemin normal SO/LO selon sa zone — à confirmer que c'est le comportement voulu.

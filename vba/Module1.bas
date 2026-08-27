@@ -1,4 +1,4 @@
-Option Explicit
+﻿Option Explicit
   
 Sub GenererPlanningPacking()
     Dim wb As Workbook: Set wb = ThisWorkbook
